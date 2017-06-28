@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Orchard</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-md-12">
+        <img onclick="printAnchor('colours')" src="img/colours.png" usemap="#colours-map" class="img-responsive">
+      </div>
+        <map name="colours-map">
+            <area onclick="printAnchor('red')" data-toggle="modal" data-target="#red" coords="27,112,403,415" shape="rect">
+            <area onclick="printAnchor('green')" data-toggle="modal" data-target="#green" coords="410,113,787,412" shape="rect">
+            <area onclick="printAnchor('white')" data-toggle="modal" data-target="#white" coords="797,112,1173,412" shape="rect">
+        </map>
+        <div class="modal fade" id="red" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+              <img onclick="printAnchor('colours')" src="img/red.png" usemap="#image-map" >
+          </div>
+        </div>
+        <div class="modal fade" id="green" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog">
+            <img onclick="printAnchor('colours')" src="img/green.png" usemap="#image-map">
+          </div>
+        </div>
+        <div class="modal fade" id="white" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog">
+            <img onclick="printAnchor('colours')" src="img/white.png" usemap="#image-map" >
+          </div>
+        </div>
+
+      <div class="col-md-12">
+        <img onclick="printAnchor('shapes')" src="img/shapes.png" usemap="#shapes-map" class="img-responsive">
+      </div>
+
+      <map name="shapes-map">
+          <!--<a href='img/shapes.png' target="_blank" ><img src='img/shapes.png' coords="23,50,396,646" shape="rect" ></a>-->
+        <area onclick="printAnchor('pan')" target="_blank" href="img/pan.png" coords="23,50,396,646" shape="rect">
+        <area onclick="printAnchor('phone')" target="_blank" href="img/phone.png" coords="405,45,778,344" shape="rect">
+        <area onclick="printAnchor('carrots')" target="_blank" href="img/carrots.png" coords="405,353,777,646" shape="rect">
+      </map>
+    </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.rwdImageMaps.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/site.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+      $('img[usemap]').rwdImageMaps();
+      });
+    </script>
+  </body>
+</html>
